@@ -9,15 +9,21 @@ by Lin Jen-Shin ([godfat](http://godfat.org))
 
 ## DESCRIPTION:
 
+Run a Rib console on Heroku Cedar with your Rib config!
+
 ## REQUIREMENTS:
 
-* Tested with MRI (official CRuby) 1.8.7, 1.9.2, 1.9.3, Rubinius and JRuby
+* Any Ruby
+* gem rib (required both on your machine and your app on Heroku)
+* gem heroku (only required on your machine)
 
 ## INSTALLATION:
 
     gem install rib-heroku
 
 ## SYNOPSIS:
+
+    rib heroku --app your_awesome_app
 
 ## LICENSE:
 
