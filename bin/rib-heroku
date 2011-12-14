@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'rib-heroku'
+Rib::Heroku.run(ARGV)
+exit
+
+__END__
+Run console on Heroku Cedar with your config
