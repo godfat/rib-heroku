@@ -24,6 +24,7 @@ Run a Rib console on Heroku Cedar with your Rib config!
 ## SYNOPSIS:
 
     rib heroku --app your_awesome_app
+    rib heroku --remote heroku -- all
 
 ## LICENSE:
 
