@@ -9,7 +9,9 @@ by Lin Jen-Shin ([godfat](http://godfat.org))
 
 ## DESCRIPTION:
 
-Run a Rib console on Heroku Cedar with your Rib config!
+Run a [Rib][] console on Heroku Cedar with your Rib config!
+
+[Rib]: https://github.com/godfat/rib
 
 ## REQUIREMENTS:
 
