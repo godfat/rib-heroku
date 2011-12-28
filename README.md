@@ -33,6 +33,8 @@ Passing `rib` command arguments, separating with `--`:
 
     rib heroku --app your_awesome_app -- all
 
+[Rib]: https://github.com/godfat/rib
+
 ## LICENSE:
 
 Apache License 2.0
