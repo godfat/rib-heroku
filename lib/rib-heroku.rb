@@ -2,8 +2,8 @@
 module Rib; end
 module Rib::Heroku
   def self.run argv
-    require 'rib-heroku/monkey_patch'
     require 'heroku/command'
+    require 'rib-heroku/monkey_patch'
     split = argv.index('--') || argv.size
     argv.delete('--')
     argv_heroku, argv_rib = argv[0...split], argv[split..-1]

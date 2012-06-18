@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = "rib-heroku"
-  s.version = "0.8.0"
+  s.version = "0.8.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Lin Jen-Shin (godfat)"]
-  s.date = "2011-12-28"
+  s.date = "2012-06-18"
   s.description = "Run a [Rib][] console on Heroku Cedar with your Rib config!\n\n[Rib]: https://github.com/godfat/rib"
   s.email = ["godfat (XD) godfat.org"]
   s.executables = ["rib-heroku"]
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   "task/gemgem.rb"]
   s.homepage = "https://github.com/godfat/rib-heroku"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.13"
+  s.rubygems_version = "1.8.24"
   s.summary = "Run a [Rib][] console on Heroku Cedar with your Rib config!"
 
   if s.respond_to? :specification_version then
