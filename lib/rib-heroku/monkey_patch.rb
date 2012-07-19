@@ -46,16 +46,23 @@ class Heroku::Client::Rendezvous
             rescue EOFError
               break
             end
-            output.write(data)
+            output.write(fixup(data))
           end
         else
           raise(Timeout::Error.new)
         end
       end
     rescue Interrupt
-      ssl_socket.write("\003")
+      ssl_socket.write(3.chr)
       ssl_socket.flush
       retry
+    rescue SignalException => e
+      if Signal.list["QUIT"] == e.signo
+        ssl_socket.write(28.chr)
+        ssl_socket.flush
+        retry
+      end
+      raise
     rescue Errno::EIO
     end
   end
