@@ -24,6 +24,6 @@ module Rib::Heroku
 
   def self.load_script
     @load_script ||= File.read(Rib.config_path).tr("\n", ';') +
-      ";require 'rib/app/auto';Rib::Auto.load;throw :rib_skip"
+      ";require 'rib/app/auto';Rib::Auto.load;Rib::Skip"
   end
 end

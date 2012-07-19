@@ -11,7 +11,8 @@ task 'gem:spec' do
     s.name    = 'rib-heroku'
     s.version = Rib::Heroku::VERSION
 
-    %w[rib heroku].each{ |g| s.add_runtime_dependency(g) }
+    %w[heroku].each{ |g| s.add_runtime_dependency(g) }
+    s.add_runtime_dependency('rib', '>=1.1.0')
   end
 
   Gemgem.write
