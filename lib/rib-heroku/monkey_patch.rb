@@ -8,10 +8,12 @@ class Heroku::Client::Rendezvous
 
     ssl_socket = Timeout.timeout(connect_timeout) do
       ssl_context = OpenSSL::SSL::SSLContext.new
-      if ((host =~ /heroku\.com$/) && !(ENV["HEROKU_SSL_VERIFY"] == "disable"))
-        ssl_context.ca_file = File.expand_path("../../../../data/cacert.pem", __FILE__)
+
+      if Heroku::Auth.verify_host?(host)
+        ssl_context.ca_file     = File.expand_path("../../../../data/cacert.pem", __FILE__)
         ssl_context.verify_mode = OpenSSL::SSL::VERIFY_PEER
       end
+
       tcp_socket = TCPSocket.open(host, port)
       ssl_socket = OpenSSL::SSL::SSLSocket.new(tcp_socket, ssl_context)
       ssl_socket.connect
@@ -37,6 +39,9 @@ class Heroku::Client::Rendezvous
             rescue EOFError
               readables.delete(input)
               next
+            end
+            if running_on_windows?
+              data.gsub!("\r\n", "\n") # prevent double CRs
             end
             ssl_socket.write(data)
             ssl_socket.flush
